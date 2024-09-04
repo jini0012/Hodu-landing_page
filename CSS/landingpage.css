@@ -94,6 +94,7 @@ details[open] {
   font-weight: 700;
   font-size: 1.4rem;
   line-height: 17.53px;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {
