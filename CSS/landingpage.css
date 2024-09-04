@@ -122,10 +122,6 @@ main {
 
 /* main1 */
 
-.main1-bg {
-  width: 100%;
-}
-
 .main1 {
   padding: 4rem 5.2rem 0;
   display: flex;
@@ -359,40 +355,6 @@ footer img {
 
   header {
     justify-content: space-around;
-  }
-
-  /* 메인 조정............힘들다............ */
-  .main1 {
-    padding: 3.2rem 0 0;
-    display: grid;
-    grid-template-areas:
-      "p1 img1"
-      "p2 img1"
-      "btn1 img1";
-    justify-content: center;
-    justify-items: start;
-    text-align: left;
-    row-gap: 4rem;
-    column-gap: 12.8rem;
-  }
-
-  .main1 .title {
-    grid-area: p1;
-    align-self: self-end;
-  }
-
-  .main1 .detail {
-    grid-area: p2;
-  }
-
-  .main1 .btn {
-    grid-area: btn1;
-    align-self: self-start;
-  }
-
-  .main1 img {
-    min-width: 41.5rem;
-    grid-row: 1/4;
   }
 
   footer {
