@@ -38,9 +38,7 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 2.2rem;
-
   background-color: var(--bg-color);
-  /* position 써야함!!! */
   position: sticky;
 }
 
@@ -116,7 +114,17 @@ details[open] {
   color: var(--point-color);
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* main1 */
+
+.main1-bg {
+  width: 100%;
+}
 
 .main1 {
   padding: 4rem 5.2rem 0;
@@ -130,7 +138,8 @@ details[open] {
 
 /* ??????다시 하기 */
 .main1 img {
-  width: minmax(197px, 41.5rem);
+  width: 100%;
+  min-width: 19.7rem;
   max-width: 41.5rem;
 }
 
@@ -344,5 +353,53 @@ footer img {
   /*  */
   .menu a {
     color: #000000;
+    font-size: 1.6rem;
+    line-height: 20.03px;
+  }
+
+  header {
+    justify-content: space-around;
+  }
+
+  /* 메인 조정............힘들다............ */
+  .main1 {
+    padding: 3.2rem 0 0;
+    display: grid;
+    grid-template-areas:
+      "p1 img1"
+      "p2 img1"
+      "btn1 img1";
+    justify-content: center;
+    justify-items: start;
+    text-align: left;
+    row-gap: 4rem;
+    column-gap: 12.8rem;
+  }
+
+  .main1 .title {
+    grid-area: p1;
+    align-self: self-end;
+  }
+
+  .main1 .detail {
+    grid-area: p2;
+  }
+
+  .main1 .btn {
+    grid-area: btn1;
+    align-self: self-start;
+  }
+
+  .main1 img {
+    min-width: 41.5rem;
+    grid-row: 1/4;
+  }
+
+  footer {
+    justify-content: space-around;
+  }
+
+  .mobile {
+    display: none;
   }
 }
