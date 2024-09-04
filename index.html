@@ -7,5 +7,162 @@
     <link rel="stylesheet" href="./CSS/reset.css" />
     <link rel="stylesheet" href="./CSS/landingpage.css" />
   </head>
-  <body></body>
+  <body>
+    <!-- 헤더에 position sticky 사용!! -->
+    <header class="header">
+      <h1>
+        <a href="#"><img src="./img/logo.svg" alt="호두" /></a>
+      </h1>
+      <aside class="menu">
+        <!-- 메뉴 버튼 css로 적용해보기 / 열렸을때 가상요소로 이미지 변경 해보기 -->
+        <details class="menu-btn">
+          <summary></summary>
+          <nav>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Support</a></li>
+              <li><button class="btn">Download</button></li>
+            </ul>
+          </nav>
+        </details>
+      </aside>
+    </header>
+
+    <main>
+      <section class="main1">
+        <!-- h태그 숨기기 -->
+        <h2>호두 프로그램 다운로드 안내</h2>
+        <p>Lorem Ipsum is simply dummy text of the printing and</p>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown
+        </p>
+        <button class="btn">Download</button>
+        <img src="./img/box-cat.png" alt="박스를 머리에 뒤집어쓴 호두" />
+      </section>
+
+      <section class="main2">
+        <!-- h태그 숨기기 -->
+        <h2>호두 간단한 소개</h2>
+        <img src="./img/img_4.jpg" alt="침대에 누워 천장을 바라보는 호두" />
+        <p>Lorem Ipsum is simply dummy text of the printing and dummy text</p>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry.
+        </p>
+      </section>
+
+      <section class="main3">
+        <!-- h태그 숨기기 -->
+        <h2>호두의 사진첩</h2>
+        <p>dummy text of the printing and dummy</p>
+        <p>
+          Lorem Ipsum is simply <span class="point">dummy text</span> of the
+          printing and typesetting industry. Lorem Ipsum has been the industry's
+          standard dummy text ever since the 1500s, when an unknown
+        </p>
+        <article>
+          <!-- h태그 숨기기 -->
+          <h3>호두 사진들</h3>
+          <nav>
+            <li>
+              <img src="./img/img_1.jpg" alt="캣타워에서 멍때리는 호두" />
+            </li>
+            <li>
+              <img src="./img/img_2.jpg" alt="벽을 바라보는 호두 뒷모습" />
+            </li>
+            <li>
+              <img
+                src="./img/img_3.jpg"
+                alt="침대 옆에서 주인을 바라보는 호두"
+              />
+            </li>
+          </nav>
+        </article>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown Ipsum is simply dummy text of the
+          printing and typesetting industry.
+        </p>
+        <button class="btn">Learn More</button>
+      </section>
+
+      <aside>
+        <h2>Subscribe to our Blog post</h2>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text
+        </p>
+        <form action="#" method="get">
+          <!-- 라벨태그 숨기기 -->
+          <label for="email"
+            ><img src="./img/mail.svg" alt="이메일 입력"
+          /></label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter your e-mail address"
+          />
+          <button class="btn" id="showDialogBtn">Subscribe</button>
+
+          <dialog id="subscribe">
+            <img
+              src="./img/cat-subscribe.png"
+              alt="볼터치 효과를 준 호두 얼굴"
+            />
+            <h3>Thank you!</h3>
+            <p>Lorem Ipsum is simply dummy text of the printing industry.</p>
+            <button id="closeBtn" type="button" class="btn">
+              OK! I Love HODU
+            </button>
+          </dialog>
+        </form>
+      </aside>
+    </main>
+
+    <!-- 임시 스크립트 -->
+    <script>
+      const dialog = document.getElementById("subscribe");
+      const showDialogBtn = document.getElementById("showDialogBtn");
+      const closeBtn = document.getElementById("closeBtn");
+
+      showDialogBtn.addEventListener("click", () => {
+        dialog.showModal();
+        console.log("오르미 FE 짱짱");
+      });
+
+      closeBtn.addEventListener("click", () => {
+        dialog.close();
+      });
+    </script>
+
+    <footer>
+      <img src="./img/logo.svg" alt="호두" />
+      <nav class="link">
+        <li>
+          <a href="#"
+            ><img src="./img/blog.svg" alt="블로그 링크 바로가기"
+          /></a>
+        </li>
+        <li>
+          <a href="#"
+            ><img src="./img/instagram.svg" alt="인스타그램 링크 바로가기"
+          /></a>
+        </li>
+        <li>
+          <a href="#"
+            ><img src="./img/facebook.svg" alt="페이스북 링크 바로가기"
+          /></a>
+        </li>
+        <li>
+          <a href="#"
+            ><img src="./img/youtube.svg" alt="유튜브 링크 바로가기"
+          /></a>
+        </li>
+      </nav>
+    </footer>
+  </body>
 </html>
