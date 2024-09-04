@@ -9,32 +9,32 @@
   </head>
   <body>
     <!-- 헤더에 position sticky 사용!! -->
-    <header class="header">
+    <header class="h">
       <h1>
         <a href="#"><img src="./img/logo.svg" alt="호두" /></a>
       </h1>
-      <aside class="menu">
-        <!-- 메뉴 버튼 css로 적용해보기 / 열렸을때 가상요소로 이미지 변경 해보기 -->
-        <details class="menu-btn">
-          <summary></summary>
-          <nav>
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Support</a></li>
-              <li><button class="btn">Download</button></li>
-            </ul>
-          </nav>
-        </details>
-      </aside>
+
+      <!-- 메뉴 버튼 css로 적용해보기 / 열렸을때 가상요소로 이미지 변경 해보기 -->
+      <details class="menu open">
+        <summary></summary>
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Support</a></li>
+            <li><button class="btn">Download</button></li>
+          </ul>
+        </nav>
+      </details>
     </header>
 
     <main>
       <section class="main1" id="top">
-        <!-- h태그 숨기기 -->
-        <h2>호두 프로그램 다운로드 안내</h2>
-        <p>Lorem Ipsum is simply dummy text of the printing and</p>
-        <p>
+        <h2 class="sr-only">호두 프로그램 다운로드 안내</h2>
+        <p class="title">
+          Lorem Ipsum is simply dummy text of the printing and
+        </p>
+        <p class="detail">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s, when an unknown
@@ -44,10 +44,11 @@
       </section>
 
       <section class="main2">
-        <!-- h태그 숨기기 -->
-        <h2>호두 간단한 소개</h2>
+        <h2 class="sr-only">호두 간단한 소개</h2>
         <img src="./img/img_4.jpg" alt="침대에 누워 천장을 바라보는 호두" />
-        <p>Lorem Ipsum is simply dummy text of the printing and dummy text</p>
+        <p class="title">
+          Lorem Ipsum is simply dummy text of the printing and dummy text
+        </p>
         <p>
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry.
@@ -55,17 +56,15 @@
       </section>
 
       <section class="main3">
-        <!-- h태그 숨기기 -->
-        <h2>호두의 사진첩</h2>
-        <p>dummy text of the printing and dummy</p>
+        <h2 class="sr-only">호두의 사진첩</h2>
+        <p class="title">dummy text of the printing and dummy</p>
         <p>
           Lorem Ipsum is simply <span class="point">dummy text</span> of the
           printing and typesetting industry. Lorem Ipsum has been the industry's
           standard dummy text ever since the 1500s, when an unknown
         </p>
         <article>
-          <!-- h태그 숨기기 -->
-          <h3>호두 사진들</h3>
+          <h3 class="sr-only">호두 사진들</h3>
           <nav>
             <li>
               <img src="./img/img_1.jpg" alt="캣타워에서 멍때리는 호두" />
@@ -91,14 +90,13 @@
       </section>
 
       <aside class="blogpost">
-        <h2>Subscribe to our Blog post</h2>
+        <h2 class="title">Subscribe to our Blog post</h2>
         <p>
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text
         </p>
         <form action="#" method="get">
-          <!-- 라벨태그 숨기기 -->
-          <label for="email"
+          <label class="sr-only" for="email"
             ><img src="./img/mail.svg" alt="이메일 입력"
           /></label>
           <input
@@ -146,26 +144,28 @@
     <footer>
       <img src="./img/logo.svg" alt="호두" />
       <nav class="link">
-        <li>
-          <a href="#"
-            ><img src="./img/blog.svg" alt="블로그 링크 바로가기"
-          /></a>
-        </li>
-        <li>
-          <a href="#"
-            ><img src="./img/instagram.svg" alt="인스타그램 링크 바로가기"
-          /></a>
-        </li>
-        <li>
-          <a href="#"
-            ><img src="./img/facebook.svg" alt="페이스북 링크 바로가기"
-          /></a>
-        </li>
-        <li>
-          <a href="#"
-            ><img src="./img/youtube.svg" alt="유튜브 링크 바로가기"
-          /></a>
-        </li>
+        <ul>
+          <li>
+            <a href="#"
+              ><img src="./img/blog.svg" alt="블로그 링크 바로가기"
+            /></a>
+          </li>
+          <li>
+            <a href="#"
+              ><img src="./img/instagram.svg" alt="인스타그램 링크 바로가기"
+            /></a>
+          </li>
+          <li>
+            <a href="#"
+              ><img src="./img/facebook.svg" alt="페이스북 링크 바로가기"
+            /></a>
+          </li>
+          <li>
+            <a href="#"
+              ><img src="./img/youtube.svg" alt="유튜브 링크 바로가기"
+            /></a>
+          </li>
+        </ul>
       </nav>
     </footer>
   </body>

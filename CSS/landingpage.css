@@ -28,6 +28,85 @@ html {
 /* 모바일 화면 크기 : 320 ~ 767px */
 body {
   font-family: "SpoqaHanSansNeo-Regular";
-  max-width: 767px;
-  background-color: #f2e9d8;
+  min-width: 320px;
+  background-color: var(--bg-color);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  /* gap: 22.6rem; */
+  padding: 2.2rem;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* 메뉴를 PC 에서는 open 하고 이미지 숨김처리 아니면 none 적용해서 해보기 */
+/* summary에 bg CSS 넣어서 나중에 숨기기하기*/
+summary {
+  list-style: none;
+}
+summary::before {
+  content: "";
+  display: inline-block;
+  width: 3.2rem;
+  height: 3.2rem;
+  background-image: url(../img/menu.svg);
+  background-repeat: no-repeat;
+}
+
+/* transition 으로 사용가능한가? 검토 */
+details[open] {
+}
+
+.main1 {
+  padding: 4rem 5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* -> 버튼 크기 맞게 설정됨 */
+  text-align: center;
+  gap: 3rem;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 30.05px;
+}
+
+.detail {
+  font-size: 1.4rem;
+  line-height: 17.53px;
+}
+
+.btn {
+  width: 11.9rem;
+  height: 4rem;
+  border-radius: 4rem;
+  background-color: var(--point-color);
+  border: none;
+  color: #fff;
+  /* padding: 1.1rem, 2.4rem; */
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 17.53px;
+}
+
+@media screen and (min-width: 768px) {
+  summary::before {
+    content: none;
+  }
+  /* PC 모드 사용 시 아래 코드 사용 flex 로 둘 것  */
+  .menu ul {
+    display: flex;
+    gap: 30px;
+  }
+
+  .menu a {
+    color: #000000;
+  }
 }
