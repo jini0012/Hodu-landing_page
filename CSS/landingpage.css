@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "SpoqaHanSansNeo-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --main-color: #000000;
+  --point-color: #d97652;
+  --link-color: #f29d52;
+  --bg-color: #f2e9d8;
+}
+
+.sr-only {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+html {
+  font-size: 10px;
+}
+/* 모바일 화면 크기 : 320 ~ 767px */
+body {
+  font-family: "SpoqaHanSansNeo-Regular";
+  max-width: 767px;
+  background-color: #f2e9d8;
+}
