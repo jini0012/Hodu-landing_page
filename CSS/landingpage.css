@@ -190,7 +190,6 @@ details[open] > summary::before {
   flex-direction: column;
   padding: 2rem 3.2rem;
   gap: 4rem;
-  /* align-items: center; */
 }
 
 .div1 {
@@ -204,7 +203,7 @@ details[open] > summary::before {
   display: flex;
   gap: 2rem;
   overflow-x: scroll;
-  /* 스크롤바 숨기기 */
+  /* 스크롤바 숨기기 - 동작 구현...안되네...ㅎ */
   scrollbar-width: none;
 }
 
