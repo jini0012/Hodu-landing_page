@@ -51,22 +51,16 @@ a {
 
 /* sidebar */
 
-summary {
+.nav1 summary {
   list-style: none;
 }
-summary::before {
+.nav1 summary::before {
   content: "";
   display: inline-block;
   width: 3.2rem;
   height: 3.2rem;
   background-image: url(../img/menu.svg);
   background-repeat: no-repeat;
-}
-
-.nav1 {
-  position: absolute;
-  top: 3rem;
-  right: 2rem;
 }
 
 .nav1 ul {
