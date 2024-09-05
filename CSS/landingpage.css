@@ -32,14 +32,16 @@ body {
   min-width: 320px;
 }
 
+/* header */
 header {
   position: sticky;
   top: 0;
   display: flex;
+  padding: 2.4rem 2rem;
   justify-content: space-between;
-  padding: 2.2rem;
+  font-size: 1.6rem;
+  line-height: 20.03px;
   background-color: var(--bg-color);
-  position: sticky;
 }
 
 a {
@@ -47,8 +49,7 @@ a {
   color: #fff;
 }
 
-/* 메뉴를 PC 에서는 open 하고 이미지 숨김처리 아니면 none 적용해서 해보기 */
-/* summary에 bg CSS 넣어서 나중에 숨기기하기*/
+/* sidebar */
 summary {
   list-style: none;
 }
@@ -61,9 +62,34 @@ summary::before {
   background-repeat: no-repeat;
 }
 
-/* transition 으로 사용가능한가? 검토 */
-details[open] {
+details ul {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  background-color: var(--aside-color);
 }
+
+details[open] > summary {
+  list-style: none;
+}
+
+details[open] > summary::before {
+  content: "";
+  background-image: url(../img/arrow-right.svg);
+  display: inline-block;
+  background-repeat: no-repeat;
+  width: 3.2rem;
+  height: 3.2rem;
+}
+/* sidebar */
+
+/* 사이드바 다시 하기!!!!!!!!!!!!!!!!!!!! */
+
+/* 사이드바 transition 으로 사용가능한가? 검토 */
+
+/* header */
+
+/* main */
 
 /* main 내 공통 부분 */
 .title {
@@ -72,24 +98,15 @@ details[open] {
   line-height: 30.05px;
 }
 
-.title {
-  font-weight: 700;
-  font-size: 2.4rem;
-  line-height: 30.05px;
-}
-
 .detail {
+  font-weight: 400;
   font-size: 1.4rem;
   line-height: 17.53px;
 }
 
-.m3-detail {
+.detail2 {
   font-size: 1.6rem;
   line-height: 20.03px;
-}
-
-.left {
-  text-align: left;
 }
 
 .btn {
@@ -101,6 +118,7 @@ details[open] {
   color: #fff;
   font-weight: 700;
   font-size: 1.4rem;
+  text-align: center;
   line-height: 17.53px;
   cursor: pointer;
 }
@@ -114,55 +132,58 @@ details[open] {
   color: var(--point-color);
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.aside-detail {
+  color: var(--bg-color);
 }
 
 /* main1 */
 
 .main1 {
-  padding: 4rem 5.2rem 0;
+  padding: 4rem 5.8rem 0 5.2rem;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
-  text-align: center;
   align-items: center;
+  /* 이미지와 버튼의 간격 */
+  gap: 3rem;
   background-color: var(--bg-color);
 }
 
-/* ??????다시 하기 */
+.main1 div {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+/* 이미지 다시 하기!!!!!!!!!!!!!!!!!!!! */
 .main1 img {
   width: 100%;
   min-width: 19.7rem;
   max-width: 41.5rem;
 }
 
-/* .main1 {
-  
-  박스 고양이 잘린거 어떻게 표현해야하나....
-  overflow hidden 을 썼던거 같은데 다시 확인하기 ㅠㅠ!
-  height: 90.2rem;
-  height 를 설정해야 gap 4%로 설정가능
-  gap: 4%;
-} */
-
 /* main2 */
 .main2 {
   display: flex;
   flex-direction: column;
-
+  align-items: center;
   padding: 4rem 3.2rem;
-  gap: 2rem;
+  gap: 4rem;
 }
 
+/* 이미지 내 위치 조정 필요 */
 .main2 img {
   width: 100%;
-  max-width: 66rem;
+  /* max-width: 66rem; */
   aspect-ratio: 326/190;
   object-fit: cover;
-  margin-bottom: 2rem;
+}
+
+.main2 div {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 /* main3 */
@@ -170,17 +191,22 @@ main {
   display: flex;
   flex-direction: column;
   padding: 2rem 3.2rem;
-  gap: 3rem;
-  text-align: center;
-  margin-bottom: 3rem;
+  gap: 4rem;
+  /* align-items: center; */
 }
 
-.main3 ul {
+.div1 {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 3rem;
+}
+
+.main3 article ul {
   display: flex;
   gap: 2rem;
-  list-style: none;
   overflow-x: scroll;
-  /* 스크롤바 숨기기..?? */
+  /* 스크롤바 숨기기 */
   scrollbar-width: none;
 }
 
@@ -189,13 +215,26 @@ main {
 }
 
 .main3 .btn {
-  display: inline-block;
+  width: 12.6rem;
+  height: 4rem;
+}
+
+.div2 {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+}
+
+/* 버튼 위치 */
+.div2 .btn {
+  align-self: self-end;
 }
 
 /* aside */
-.blogpost {
-  padding: 3.6rem 3.2rem 3rem;
-  margin: auto 3.2rem;
+.aside1 {
+  margin: 3rem 3.2rem 0;
+  padding: 3.6rem 3.2rem;
   border-radius: 1.8rem;
   background-color: var(--aside-color);
   display: flex;
@@ -204,26 +243,17 @@ main {
   color: #fff;
 }
 
-.aside-detail {
-  color: var(--bg-color);
-}
-
-.blogpost form {
-  width: 100%;
+.aside1 form {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   gap: 2rem;
-  /* 위치 넣는거 수정 필요 */
-  position: relative;
 }
 
-.blogpost form label {
-  width: 1.5rem;
-  height: 1.2rem;
-  position: absolute;
-  left: 1.6rem;
-  top: 1.1rem;
+.aside1 form .btn {
+  width: 11.7rem;
+  height: 4rem;
+  align-self: self-end;
 }
 
 input {
@@ -233,15 +263,34 @@ input {
   border-radius: 6rem;
   text-align: center;
   border: none;
+
+  /* email logo */
+  background-image: url(../img/mail.svg);
+  background-repeat: no-repeat;
+  background-size: 1.8rem 1.8rem;
+  background-position: 1.6rem 1.1rem;
 }
 
+.up {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 100%;
+  background-color: var(--bg-color);
+}
+
+/* 백그라운드 이미지....... 위치 조정 ㅠㅠ */
 .bg-img {
   width: 100%;
-  height: 24rem;
   background-image: url(../img/img_5.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 60%;
+  background-position: 0 150px;
+  background-color: rgba(256, 256, 256, 0.6);
+}
+
+.bg {
+  height: 17.2rem;
+  background-color: rgba(242, 233, 216, 0.6);
 }
 
 /* footer */
@@ -253,7 +302,6 @@ footer {
     "link mobile";
   justify-content: space-between;
   align-items: center;
-  align-content: space-between;
   gap: 5.8rem;
 }
 
@@ -273,9 +321,9 @@ footer img {
 }
 
 .link img {
-  margin: 1rem;
-  width: 1.8rem;
-  height: 1.8rem;
+  margin: 0.689rem;
+  width: 1.829rem;
+  height: 1.829rem;
 }
 
 .mobile {
@@ -283,7 +331,7 @@ footer img {
 }
 
 .mobile ul {
-  min-width: 8.5rem;
+  width: 8.5rem;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -308,18 +356,24 @@ footer img {
   border-radius: 3rem;
   box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.2);
 
-  /* display: flex; */
   box-sizing: border-box;
   padding: 4rem 3rem 5rem;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
   text-align: center;
+  overflow: visible;
 }
 
 #subscribe img {
   width: 6rem;
   height: 6.2rem;
+  margin-bottom: 2.4rem;
+}
+
+#subscribe p {
+  margin-bottom: 1rem;
+}
+
+#subscribe .btn {
+  margin-top: 1.8rem;
 }
 
 #closeBtn {
@@ -338,19 +392,27 @@ footer img {
     line-height: 20.03px;
   }
 
-  /* 사이드바 */
   summary::before {
     content: none;
   }
-  .menu ul {
+  details ul {
     display: flex;
     gap: 30px;
   }
-  /*  */
-  .menu a {
+
+  details a {
     color: #000000;
     font-size: 1.6rem;
     line-height: 20.03px;
+  }
+
+  summary::before {
+    content: "";
+    background-image: url(../img/menu.svg);
+    display: inline-block;
+    background-repeat: no-repeat;
+    width: 3.2rem;
+    height: 3.2rem;
   }
 
   header {
