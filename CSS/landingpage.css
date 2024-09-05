@@ -229,7 +229,7 @@ details[open] > summary::before {
 }
 
 /* aside */
-.bg-img {
+.main4 {
   display: flex;
   justify-content: center;
 }
@@ -288,18 +288,13 @@ input {
 }
 
 /* 백그라운드 이미지....... 위치 조정 ㅠㅠ */
-.bg-img {
+.main4 {
   width: 100%;
   background-image: url(../img/img_5.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 150px;
   background-color: rgba(256, 256, 256, 0.6);
-}
-
-.bg {
-  height: 17.2rem;
-  background-color: rgba(242, 233, 216, 0.6);
 }
 
 /* footer */
