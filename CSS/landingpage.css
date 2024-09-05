@@ -39,7 +39,6 @@ header {
   display: flex;
   padding: 2.4rem 2rem;
   justify-content: space-between;
-
   font-size: 1.6rem;
   line-height: 20.03px;
   background-color: var(--bg-color);
@@ -51,6 +50,8 @@ a {
 }
 
 /* sidebar */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!해야함 */
+
 summary {
   list-style: none;
 }
@@ -63,18 +64,18 @@ summary::before {
   background-repeat: no-repeat;
 }
 
-details ul {
+.open ul {
   display: flex;
   flex-direction: column;
   gap: 3rem;
   background-color: var(--aside-color);
 }
 
-details[open] > summary {
+.open[open] > summary {
   list-style: none;
 }
 
-details[open] > summary::before {
+.open[open] > summary::before {
   content: "";
   background-image: url(../img/arrow-right.svg);
   display: inline-block;
@@ -82,11 +83,8 @@ details[open] > summary::before {
   width: 3.2rem;
   height: 3.2rem;
 }
+
 /* sidebar */
-
-/* 사이드바 다시 하기!!!!!!!!!!!!!!!!!!!! */
-
-/* 사이드바 transition 으로 사용가능한가? 검토 */
 
 /* header */
 
@@ -146,6 +144,7 @@ details[open] > summary::before {
   align-items: center;
   gap: 3rem;
   background-color: var(--bg-color);
+  overflow: hidden;
 }
 
 .main1 div {
@@ -156,10 +155,11 @@ details[open] > summary::before {
   gap: 3rem;
 }
 
-/* 고양이 발 안나오게 이미지 처리 */
 .main1 img {
-  width: 100%;
-  max-width: 19.7rem;
+  min-width: 19.7rem;
+  width: 50%;
+  aspect-ratio: 197/422;
+  object-position: center 50px;
 }
 
 /* main2 */
@@ -202,9 +202,12 @@ details[open] > summary::before {
 .main3 article ul {
   display: flex;
   gap: 2rem;
-  overflow-x: scroll;
-  /* 스크롤바 숨기기 - 동작 구현...안되네...ㅎ */
-  scrollbar-width: none;
+  overflow-x: auto;
+}
+
+/* 스크롤바 가리기 사용 */
+.main3 article ul::-webkit-scrollbar {
+  display: none;
 }
 
 .main3 article img {
@@ -231,11 +234,26 @@ details[open] > summary::before {
 /* aside */
 .main4 {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding-bottom: 17.2rem;
+}
+
+.bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  opacity: 0.6;
+  z-index: 100;
+  width: 100%;
+  height: 24rem;
+  object-fit: cover;
+  aspect-ratio: 390/240;
 }
 
 .aside1 {
-  width: 100%;
+  width: 80%;
   max-width: 128rem;
   margin: 3rem 3.2rem 0;
   padding: 3.6rem 3.2rem;
@@ -245,6 +263,7 @@ details[open] > summary::before {
   flex-direction: column;
   gap: 4.2rem;
   color: #fff;
+  z-index: 200;
 }
 
 .aside1 div {
@@ -260,12 +279,12 @@ details[open] > summary::before {
   gap: 2rem;
 }
 
-input {
+.email {
   width: 100%;
   height: 4rem;
   border-radius: 6rem;
-  text-align: center;
   border: none;
+  padding-left: 4rem;
 
   /* email logo */
   background-image: url(../img/mail.svg);
@@ -280,26 +299,9 @@ input {
   align-self: self-end;
 }
 
-.up {
-  width: 4rem;
-  height: 4rem;
-  border-radius: 100%;
-  background-color: var(--bg-color);
-}
-
-/* 백그라운드 이미지....... 위치 조정 ㅠㅠ */
-.main4 {
-  width: 100%;
-  background-image: url(../img/img_5.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 0 150px;
-  background-color: rgba(256, 256, 256, 0.6);
-}
-
 /* footer */
 footer {
-  padding: 3rem 2rem 2.4rem;
+  padding: 3rem 2rem 2.4rem 2rem;
   display: grid;
   grid-template-areas:
     "img menu"
@@ -361,7 +363,7 @@ footer img {
   box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.2);
 
   box-sizing: border-box;
-  padding: 4rem 3rem 5rem;
+  padding: 4rem 3rem 5rem 3rem;
   text-align: center;
   overflow: visible;
 }
@@ -386,6 +388,7 @@ footer img {
   /* header */
   header {
     padding: 3.1rem 32rem;
+    gap: 30.6rem;
   }
 
   summary::before {
@@ -396,18 +399,18 @@ footer img {
     display: none;
   }
 
-  details ul {
+  .open ul {
     flex-direction: row;
     align-items: center;
     gap: 30px;
     background-color: var(--bg-color);
   }
 
-  details a {
+  .open a {
     color: #000000;
   }
 
-  details[open] > summary::before {
+  .open[open] summary::before {
     background-image: none;
   }
   /* header */
@@ -444,12 +447,13 @@ footer img {
   /* main1 */
 
   .main1 {
-    padding: 3.2rem 32rem 0;
+    padding: 3.2rem 32rem 0 32rem;
     flex-direction: row;
     justify-content: space-between;
   }
 
   .main1 div {
+    min-width: 43.9rem;
     text-align: left;
     align-items: flex-start;
     gap: 4rem;
@@ -472,6 +476,7 @@ footer img {
   }
 
   .main2 div {
+    min-width: 51rem;
     gap: 3rem;
   }
 
@@ -503,12 +508,20 @@ footer img {
     width: 14.7rem;
   }
 
+  .main4 {
+    padding-bottom: 24.6rem;
+  }
+  .bg {
+    height: 34rem;
+    aspect-ratio: 1920/340;
+    object-position: center -560px;
+  }
+
   /* aside */
   .aside1 {
     height: 20rem;
     padding: 5rem 5.5rem;
     flex-direction: row;
-    /* justify-content: space-between; */
     gap: 14.3rem;
   }
 
@@ -521,12 +534,12 @@ footer img {
     justify-content: center;
     position: relative;
   }
-  input {
+  .email {
     width: 53rem;
     height: 6rem;
-    text-align: center;
     background-size: 2.4rem;
     background-position: 2.8rem 1.8rem;
+    padding-left: 6rem;
   }
 
   .aside1 form .btn {
@@ -537,7 +550,26 @@ footer img {
   }
 
   .up {
-    display: none;
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 100%;
+    background-color: #fafafa;
+    right: 2.4rem;
+    bottom: 2.4rem;
+    z-index: 300;
+  }
+
+  .up:hover::after {
+    position: absolute;
+    left: 1.3rem;
+    top: 1.5rem;
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    border-top: 4px solid #767676;
+    border-right: 4px solid #767676;
+    transform: rotate(315deg);
   }
 
   /* footer */
@@ -553,7 +585,7 @@ footer img {
     width: 60rem;
     height: 40rem;
     box-shadow: 0 0 3rem 0 rgba(0, 0, 0, 0.2);
-    padding: 6rem 10.8rem 4rem;
+    padding: 6rem 10.8rem 4rem 10.8rem;
     position: relative;
   }
 
