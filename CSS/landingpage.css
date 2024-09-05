@@ -50,7 +50,6 @@ a {
 }
 
 /* sidebar */
-/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!해야함 */
 
 summary {
   list-style: none;
@@ -64,18 +63,32 @@ summary::before {
   background-repeat: no-repeat;
 }
 
-.open ul {
+.nav1 {
+  position: absolute;
+  top: 3rem;
+  right: 2rem;
+}
+
+.nav1 ul {
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  padding: 4.2rem 5rem;
+  width: 60vw;
+  height: 100vh;
   background-color: var(--aside-color);
+
+  transform: translate(20px, -30px);
 }
 
-.open[open] > summary {
+.nav1[open] > summary {
+  padding: 2.2rem 2rem;
   list-style: none;
+  background-color: var(--aside-color);
+  transform: translate(20px, -30px);
 }
 
-.open[open] > summary::before {
+.nav1[open] > summary::before {
   content: "";
   background-image: url(../img/arrow-right.svg);
   display: inline-block;
@@ -84,7 +97,9 @@ summary::before {
   height: 3.2rem;
 }
 
-/* sidebar */
+.nav2 {
+  display: none;
+}
 
 /* header */
 
@@ -391,28 +406,21 @@ footer img {
     gap: 30.6rem;
   }
 
-  summary::before {
-    content: none;
-  }
-
-  summary {
+  .nav1 {
     display: none;
   }
 
-  .open ul {
-    flex-direction: row;
+  .nav2 {
+    list-style: none;
+    display: flex;
     align-items: center;
     gap: 30px;
-    background-color: var(--bg-color);
   }
 
-  .open a {
+  .nav2 a {
     color: #000000;
   }
 
-  .open[open] summary::before {
-    background-image: none;
-  }
   /* header */
 
   /* main */
