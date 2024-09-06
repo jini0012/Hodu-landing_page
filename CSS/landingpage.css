@@ -289,7 +289,7 @@ a {
 }
 
 .email {
-  width: 100%;
+  width: calc(100% - 4rem);
   height: 4rem;
   border-radius: 6rem;
   border: none;
