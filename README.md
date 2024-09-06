@@ -14,7 +14,7 @@
 - Hodu Blog post 구독 가능한 모달 창 구현
 - Hodu 관련 SNS 링크 연결
 
-구현하지 못한 기능 : 메뉴 사이드바 JS 구현이 어려워, 현재 PC버전의 메뉴와 Mobile 버전의 메뉴```<nav>```를 각각 사용하여 구현하였다.
+구현하지 못한 기능 : 메뉴 사이드바 기능(JS) (현재는 PC버전의 메뉴```<nav>```와 Mobile 버전의 메뉴```<deatils> 내 <nav>```를 각각 사용하여 구현하였다.)
   ## 배포 URL
 https://jini0012.github.io/Hodu-landing_page/
   ## 사용 언어
