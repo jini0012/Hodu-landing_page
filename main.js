@@ -9,3 +9,17 @@ showDialogBtn.addEventListener("click", () => {
 closeBtn.addEventListener("click", () => {
   dialog.close();
 });
+
+const navBtn = document.querySelector(".nav-btn");
+const headerNav = document.querySelector("header nav");
+
+navBtn.addEventListener("click", () => {
+  headerNav.classList.toggle("nav-active");
+  if (headerNav.classList.contains("nav-active")) {
+    navBtn.querySelector("img").src = "./img/arrow-right.svg";
+    navBtn.style.right = "50vw";
+  } else {
+    navBtn.querySelector("img").src = "./img/menu.svg";
+    navBtn.style.right = "2rem";
+  }
+});

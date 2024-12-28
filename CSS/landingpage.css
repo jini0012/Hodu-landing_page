@@ -50,53 +50,41 @@ a {
 }
 
 /* sidebar */
-
-.nav1 summary {
-  list-style: none;
-}
-.nav1 summary::before {
-  content: "";
-  display: inline-block;
-  width: 3.2rem;
-  height: 3.2rem;
-  background-image: url(../img/menu.svg);
-  background-repeat: no-repeat;
-}
-
-.nav1 ul {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  padding: 4.2rem 5rem;
-  width: 60vw;
+header nav {
+  background-color: var(--aside-color);
   height: 100vh;
-  background-color: var(--aside-color);
-
-  transform: translate(20px, -30px);
-}
-
-.nav1[open] > summary {
-  padding: 2.2rem 2rem;
-  list-style: none;
-  background-color: var(--aside-color);
-  transform: translate(20px, -30px);
-}
-
-.nav1[open] > summary::before {
-  content: "";
-  background-image: url(../img/arrow-right.svg);
-  display: inline-block;
-  background-repeat: no-repeat;
-  width: 3.2rem;
-  height: 3.2rem;
-}
-
-.nav2 {
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  right: 0;
+  width: 60vw;
   display: none;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12.7rem 5rem;
+    gap: 3rem;
+    a {
+      color: #fff;
+    }
+  }
 }
 
-/* header */
+.nav-btn {
+  position: fixed;
+  top: 3rem;
+  right: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10001;
+}
 
+.nav-active {
+  display: unset;
+}
 /* main */
 
 /* main 내 공통 부분 */
@@ -399,22 +387,26 @@ footer img {
     padding: 3.1rem 32rem;
     gap: 30.6rem;
   }
+  header nav {
+    background-color: unset;
+    height: auto;
+    position: unset;
+    width: auto;
+    z-index: 0;
+    display: unset;
 
-  .nav1 {
+    ul {
+      flex-direction: row;
+      align-items: center;
+      padding: 0;
+      a {
+        color: #000;
+      }
+    }
+  }
+  .nav-btn {
     display: none;
   }
-
-  .nav2 {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 30px;
-  }
-
-  .nav2 a {
-    color: #000000;
-  }
-
   /* header */
 
   /* main */
