@@ -421,7 +421,8 @@ footer img {
   .hodu-program-info-section {
     padding: 3.2rem 32rem 0 32rem;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 13.4rem;
 
     div {
       min-width: 43.9rem;
@@ -470,6 +471,7 @@ footer img {
       button {
         width: 14.7rem;
         align-self: center;
+        white-space: nowrap;
       }
     }
   }
