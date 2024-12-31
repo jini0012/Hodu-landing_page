@@ -322,7 +322,6 @@ footer img {
   }
 }
 
-/* subscribe 모달 */
 .subscribe-dialog {
   width: 30rem;
   height: 30rem;
@@ -573,7 +572,6 @@ footer img {
     height: 40rem;
     box-shadow: 0 0 3rem 0 rgba(0, 0, 0, 0.2);
     padding: 6rem 10.8rem 4rem 10.8rem;
-    position: relative;
 
     img {
       width: 11rem;
