@@ -4,19 +4,12 @@ const closeBtn = document.querySelector(".close-dialog-btn");
 
 showDialogBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  const scrollY = window.scrollY;
+  document.body.style.overflow = "hidden";
   subscribeDialog.showModal();
-
-  document.body.style.position = "fixed";
-  document.body.style.top = `-${scrollY}px`;
 });
 
 closeBtn.addEventListener("click", () => {
-  const scrollY = document.body.style.top;
-  document.body.style.position = "";
-  document.body.style.top = "";
-  window.scrollTo(0, parseInt(scrollY || "0") * -1);
-
+  document.body.style.overflow = "";
   subscribeDialog.close();
 });
 
