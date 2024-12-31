@@ -1,8 +1,8 @@
+const subscribeForm = document.querySelector(".subscribe-form");
 const subscribeDialog = document.querySelector(".subscribe-dialog");
-const showDialogBtn = document.querySelector(".show-dialog-btn");
 const closeBtn = document.querySelector(".close-dialog-btn");
 
-showDialogBtn.addEventListener("click", (e) => {
+subscribeForm.addEventListener("submit", (e) => {
   e.preventDefault();
   document.body.style.overflow = "hidden";
   subscribeDialog.showModal();
