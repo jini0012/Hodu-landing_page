@@ -14,19 +14,6 @@
   --aside-color: #263140;
 }
 
-.sr-only {
-  position: absolute;
-  left: -9999px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}
-
-html {
-  font-size: 10px;
-}
-/* 모바일 화면 크기 : 320 ~ 767px */
 body {
   font-family: "SpoqaHanSansNeo-Regular";
   min-width: 320px;
@@ -44,10 +31,6 @@ header {
   background-color: var(--bg-color);
 }
 
-a {
-  text-decoration: none;
-  color: #fff;
-}
 
 /* sidebar */
 header nav {

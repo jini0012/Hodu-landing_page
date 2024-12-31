@@ -127,3 +127,20 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+html {
+  font-size: 10px;
+}
+
+.sr-only {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+}
